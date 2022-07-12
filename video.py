@@ -51,8 +51,8 @@ for raiz, pastas, arquivos in os.walk(caminho_origem):
         arquivo_saida = os.path.join(raiz, nome_novo_arquivo)
 
         comando = f'{comando_ffmpeg} -i "{caminho_completo}"  ' \
-            f' -c:v {codec_video} -crf {crf} -vf scale={scale} -profile:v high -level:v {perfil_codificacao}'\
-            f'  "{arquivo_saida}"'
+            f' -c:v {codec_video} -crf {crf} -vf scale={scale} -profile:v high -level:v {perfil_codificacao} '\
+            f'  " {arquivo_saida}"'
 
 
         os.system(comando)
