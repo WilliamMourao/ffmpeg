@@ -5,8 +5,11 @@ import shutil
 
 if sys.platform == 'linux':
     comando_ffmpeg = 'ffmpeg'
+    comando_mp2enc = 'mp2enc'
 
-print('''
+def audio():
+
+    print('''
 
 Informe os seguintes dados para realizar a conversão de uma mídia de audio:
             ________________________
@@ -56,7 +59,7 @@ if codec == "A".upper():
               f' -c:a libfdk_aac -profile:a aac_low -b:a {taxa_de_bits} -ar {frequencia} -latm 1 /opt/tmp/audio.mp4 '
 
 if codec == "B".upper():
-    comando = f' docker run -v {caminho_origem}:/opt/tmp/ --rm ffmpeg {comando_ffmpeg} -stream_loop 1 -i /opt/tmp/{midia_2_0_channel} ' \
+    comando = f' docker run -v {caminho_origem}:/opt/tmp/ --rm ffmpeg {comando_ffmpeg} -stream_loop 1 -i /opt/tmp/{midia_5_1_channel} ' \
               f' -c:a libfdk_aac -profile:a aac_low -b:a {taxa_de_bits} -ar {frequencia} -latm 1 /opt/tmp/audio.mp4 '
 
 if codec == "C".upper():
@@ -94,4 +97,9 @@ for file_name in os.listdir(folder):
     new_name = folder + novo_nome + '.' + extensao
     os.rename(old_name, new_name)
 
+os.remove(src)
+
 print('*** Mídia Gerada com Sucesso ***')
+
+if(__name__ == "__main__"):
+    audio()
