@@ -7,7 +7,7 @@ if sys.platform == 'linux':
     comando_ffmpeg = 'ffmpeg'
     comando_mp2enc = 'mp2enc'
 
-def audio():
+
 
     print('''
 
@@ -37,8 +37,9 @@ Informe os seguintes dados para realizar a conversão de uma mídia de audio:
 # [E] - MPEG-4 HEv2 L2
 # [F] - AC-3, E-AC-3
 # [G] - AC-4
+def audio():
 
-print('exemplo: /home/william_mourao/Imagens/')
+    print('exemplo: /home/william_mourao/Imagens/')
 caminho_origem = str(input('Informe o local onde está a sua midia de audio: '))
 codec = str(input('Escolha uma letra do menu codec:'))
 frequencia = 48000
