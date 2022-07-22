@@ -1,21 +1,21 @@
-import audio_mpeg_1
-import audio_mpeg_4
+from audio_mpeg_1 import menu_mpeg1, entrada_de_dados
+from audio_mpeg_4 import dados_de_entrada, renomear, menu_mpeg4
+
 
 def tipo_midia():
     print("*********************************")
     print("*******Escolha uma Opção!*******")
     print("*********************************")
 
-    print('[1] MPEG-1 [2] MPEG-4')
+    print('[A] MPEG-1 [B] MPEG-4')
 
-    escolha = int(input('Informe a opção desejada: '))
+    escolha = str(input('Informe a opção desejada: '))
 
-    if (escolha == 1):
-        print('Você escolheu MPEG-1')
-        audio_mpeg_1.escolha()
-    elif(escolha == 2):
-        print('Você escolheu MPEG-4')
-        audio_mpeg_4.escolha()
+    if escolha.upper() == "A":
+        menu_mpeg1(),entrada_de_dados()
 
-if(__name__ == "__main__"):
+    elif escolha.upper() == "B":
+        menu_mpeg4(),dados_de_entrada(),renomear()
+
+if (__name__ == "__main__"):
     tipo_midia()
